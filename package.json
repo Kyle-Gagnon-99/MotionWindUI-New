@@ -1,0 +1,19 @@
+{
+	"name": "motionwindui",
+	"version": "1.0.0",
+	"description": "An NPM workspace for the MotionWIndUI component library",
+	"private": true,
+	"workspaces": [
+		"packages/config",
+		"packages/base",
+		"packages/button",
+		"docs"
+	],
+	"keywords": [],
+	"author": "Kyle Gagnon",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"lerna": "^8.1.5"
+	}
+}

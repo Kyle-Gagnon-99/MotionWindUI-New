@@ -1,0 +1,40 @@
+{
+	"name": "@motionwindui/button",
+	"version": "1.0.0",
+	"description": "Button for MotionWindUI",
+	"keywords": [
+		"motionwindui",
+		"button"
+	],
+	"author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+	"homepage": "",
+	"license": "ISC",
+	"directories": {
+		"lib": "lib"
+	},
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"build": "tsc",
+		"build:css": "postcss src/Button.css -o dist/Button.css"
+	},
+	"peerDependencies": {
+		"react": ">=17.0.0",
+		"react-dom": ">=17.0.0"
+	},
+	"devDependencies": {
+		"@motionwindui/config": "^0.1.0",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^9.6.0",
+		"postcss": "^8.4.39",
+		"postcss-cli": "^11.0.0",
+		"prettier": "^3.3.2",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"tailwindcss": "^3.4.4"
+	},
+	"dependencies": {
+		"@motionwindui/base": "^1.0.0"
+	}
+}

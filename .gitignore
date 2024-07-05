@@ -1,0 +1,21 @@
+# NPM directories
+node_modules/
+
+# OS directories
+.DS_Store
+
+# IDE directories
+.idea/
+.vscode/
+
+# Compiled files
+dist/
+
+# Logs
+npm-debug.log*
+
+# Python directories
+__pycache__/
+.venv/
+
+*storybook.log
