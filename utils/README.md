@@ -4,4 +4,5 @@ The `utils` directory contains a collection of utility scripts that are used in 
 
 ## Subdirectories
 
--   `design-tokens`: Scripts for generating various stylesheets from a design token file. Uses a single YAML file as the source of truth for design tokens.
+- `design-tokens`: Scripts for generating various stylesheets from a design token file. Uses a single YAML file as the source of truth for design tokens.
+- `utils`: An NPM package that contains MotionWindUI utility functions such as `cn` (which combines class names and tw-merge).

@@ -1,0 +1,7 @@
+/* A global CSS file that includes all CSS files from each component and the base so that storybook can use those styles */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "../base/css/styles.css";
+@import "../button/src/Button.css";

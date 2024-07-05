@@ -5,5 +5,7 @@
 @layer base {
     :root {
         --test-color: #123456;
+        --test-color-2: #654321;
+        --some-color: #FEDCBA;
     }
 }

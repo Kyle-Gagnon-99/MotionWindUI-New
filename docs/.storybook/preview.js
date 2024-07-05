@@ -1,8 +1,9 @@
 /** @type { import('@storybook/react').Preview } */
 
-// Include Tailwind CSS in your Storybook preview
-import "../../packages/base/dist/styles.css";
-import "../../packages/button/src/Button.css";
+// This is a global file of all styles and components put together
+// In production, this is not really used as each component is imported individually
+// This is just for the purpose of storybook
+import "../../packages/config/dist/styles.css"
 
 const preview = {
     parameters: {

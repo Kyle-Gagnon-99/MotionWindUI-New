@@ -1,0 +1,255 @@
+# Design System Tokens for MotionWindUI
+#
+# File Structure
+# Each section will have a corresponding token. Each token will have a description and values. The values can be a single value or a list of key-value pairs.
+# For key-value pair values, the key will either be the name of the key (e.g. 50, 100, 200, etc.) or a mode (e.g. light, dark, etc.).
+# Modes are reserved values which can be used to define different values for different modes (e.g. light, dark, etc.).
+# 'light' and 'dark' are reserved modes to provide a basic TailwindCSS dark mode support.
+# In CSS this would generate as:
+# :root {
+#   --surface-primary: var(--some-var);
+#
+#   .dark {
+#     --surface-primary: var(--some-other-var);
+#   }
+#}
+# 
+# Any other mode can be defined and used as needed. They will generate as:
+# :root[data-theme="some-mode"] {
+#
+# In the future, there may be support for inheriting another YAML configuration and merging the values.
+# This would allow for a base configuration to be defined and then extended by other configurations.
+
+# Comment out to list other modes
+#modes:
+#  - high-contrast
+#  - low-contrast
+
+# Primitive Tokens
+# Primitive Tokens are used to define the basic building blocks for the theme of the design system.
+# Colors
+colors:
+  cardinal:
+    description: "A color used to represent danger or error."
+    values:
+      50: "#fdf4f3"
+      100: "#fce7e7"
+      200: "#f8d3d4"
+      300: "#f3aeb1"
+      400: "#eb8186"
+      500: "#df545f"
+      600: "#ca3447"
+      700: "#bb2a40"
+      800: "#8e2336"
+      900: "#7a2134"
+      950: "#440d18"
+  brandy-punch:
+    description: "A color used to represent a warning or alert."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  aqua-forest:
+    description: "A color used to represent success or confirmation."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  warm-gray:
+    description: "A color used to represent neutral or disabled."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  cool-gray:
+    description: "A color used to represent neutral or disabled."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  neutral-gray:
+    description: "A color used to represent neutral or disabled."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  fuchsia-blue:
+    description: "A color used to represent a secondary action."
+    values:
+      50: ""
+      100: ""
+      200: ""
+      300: ""
+      400: ""
+      500: ""
+      600: ""
+      700: ""
+      800: ""
+      900: ""
+      950: ""
+  science-blue:
+    description: "A color used to represent a primary action."
+    values:
+      50: "#f1f7fe"
+      100: "#e3ecfb"
+      200: "#c0d9f7"
+      300: "#88bbf1"
+      400: "#4998e7"
+      500: "#227bd5"
+      600: "#1565c0"
+      700: "#114c93"
+      800: "#12427a"
+      900: "#153965"
+      950: "#0e2443"
+  
+
+# Style Tokens
+# Style Tokens use primitive tokens to define the style of the design system.
+
+# Primary
+style-tokens:
+  primary:
+    description: "Primary color is used to create a sense of trust and reliability."
+    values:
+      50: "var(--science-blue-50)"
+      100: "var(--science-blue-100)"
+      200: "var(--science-blue-200)"
+      300: "var(--science-blue-300)"
+      400: "var(--science-blue-400)"
+      500: "var(--science-blue-500)"
+      600: "var(--science-blue-600)"
+      700: "var(--science-blue-700)"
+      800: "var(--science-blue-800)"
+      900: "var(--science-blue-900)"
+      950: "var(--science-blue-950)"
+  secondary:
+    description: "Secondary color is used to create a sense of action and urgency."
+    values:
+      50: "var(--fuchsia-blue-50)"
+      100: "var(--fuchsia-blue-100)"
+      200: "var(--fuchsia-blue-200)"
+      300: "var(--fuchsia-blue-300)"
+      400: "var(--fuchsia-blue-400)"
+      500: "var(--fuchsia-blue-500)"
+      600: "var(--fuchsia-blue-600)"
+      700: "var(--fuchsia-blue-700)"
+      800: "var(--fuchsia-blue-800)"
+      900: "var(--fuchsia-blue-900)"
+      950: "var(--fuchsia-blue-950)"
+  success:
+    description: "Success color is used to create a sense of completion and satisfaction."
+    values:
+      50: "var(--aqua-forest-50)"
+      100: "var(--aqua-forest-100)"
+      200: "var(--aqua-forest-200)"
+      300: "var(--aqua-forest-300)"
+      400: "var(--aqua-forest-400)"
+      500: "var(--aqua-forest-500)"
+      600: "var(--aqua-forest-600)"
+      700: "var(--aqua-forest-700)"
+      800: "var(--aqua-forest-800)"
+      900: "var(--aqua-forest-900)"
+      950: "var(--aqua-forest-950)"
+  warning:
+    description: "Warning color is used to create a sense of caution and attention."
+    values:
+      50: "var(--brandy-punch-50)"
+      100: "var(--brandy-punch-100)"
+      200: "var(--brandy-punch-200)"
+      300: "var(--brandy-punch-300)"
+      400: "var(--brandy-punch-400)"
+      500: "var(--brandy-punch-500)"
+      600: "var(--brandy-punch-600)"
+      700: "var(--brandy-punch-700)"
+      800: "var(--brandy-punch-800)"
+      900: "var(--brandy-punch-900)"
+      950: "var(--brandy-punch-950)"
+  danger:
+    description: "Danger color is used to create a sense of error and danger."
+    values:
+      50: "var(--cardinal-50)"
+      100: "var(--cardinal-100)"
+      200: "var(--cardinal-200)"
+      300: "var(--cardinal-300)"
+      400: "var(--cardinal-400)"
+      500: "var(--cardinal-500)"
+      600: "var(--cardinal-600)"
+      700: "var(--cardinal-700)"
+      800: "var(--cardinal-800)"
+      900: "var(--cardinal-900)"
+      950: "var(--cardinal-950)"
+  neutral:
+    description: "Neutral color is used to create a sense of neutrality and balance."
+    values:
+      50: "var(--cool-gray-50)"
+      100: "var(--cool-gray-100)"
+      200: "var(--cool-gray-200)"
+      300: "var(--cool-gray-300)"
+      400: "var(--cool-gray-400)"
+      500: "var(--cool-gray-500)"
+      600: "var(--cool-gray-600)"
+      700: "var(--cool-gray-700)"
+      800: "var(--cool-gray-800)"
+      900: "var(--cool-gray-900)"
+      950: "var(--cool-gray-950)"
+
+  # Surface
+  # Surface colors are used on top of background colors to create a sense of depth and hierarchy.
+  surface:
+    primary:
+      description: "The primary color for the surface."
+      values:
+        mode:
+          light: "var(--primary-500)"
+          dark: "var(--primary-800)"
+
+# Component Tokens
+# Component Tokens are used to define parts of a UI component (e.g. button, input, etc.). Parts of a component are seperated to allow for more flexibility in theming.
+# Parts of a component include: background, border, text, and shadow. These should also have defined states (e.g. hover, focus, active, etc.).
+components:
+  button:
+    primary:
+      solid:
+        background:
+          description: "The background color of a primary solid variant button."
+          values: "var(--surface-primary)"
