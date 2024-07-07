@@ -1,0 +1,32 @@
+{
+	"name": "@motionwindui/utils",
+	"version": "1.0.0",
+	"description": "MotionWindUI utils",
+	"author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+	"homepage": "https://github.com/Kyle-Gagnon-99/MotionWindUI-New#readme",
+	"license": "ISC",
+	"main": "lib/utils.js",
+	"directories": {
+		"lib": "lib"
+	},
+	"files": [
+		"lib"
+	],
+	"scripts": {
+		"build": "tsc"
+	},
+	"dependencies": {
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"tailwind-merge": "^2.3.0"
+	},
+	"devDependencies": {
+		"@motionwindui/config": "^0.1.0",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^9.6.0",
+		"postcss": "^8.4.39",
+		"prettier": "^3.3.2",
+		"tailwindcss": "^3.4.4",
+		"typescript": "^5.5.3"
+	}
+}

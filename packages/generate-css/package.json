@@ -1,0 +1,46 @@
+{
+	"name": "@motionwindui/generate-css",
+	"version": "1.0.0",
+	"description": "Generates CSS from a given YAML file of design tokens",
+	"keywords": [
+		"design",
+		"tokens",
+		"yaml",
+		"css",
+		"generate"
+	],
+	"author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+	"homepage": "https://github.com/Kyle-Gagnon-99/MotionWindUI-New#readme",
+	"license": "ISC",
+	"main": "dist/generate-css.js",
+	"bin": {
+		"generate-css": "dist/generate-css.js"
+	},
+	"directories": {
+		"src": "src"
+	},
+	"files": [
+		"src"
+	],
+	"scripts": {
+		"build": "tsc",
+		"start": "ts-node src/generate-css.ts"
+	},
+	"dependencies": {
+		"yaml": "^2.4.5"
+	},
+	"devDependencies": {
+		"@motionwindui/config": "^0.1.0",
+		"@types/node": "^20.14.10",
+		"@types/yaml": "^1.9.7",
+		"@types/yargs": "^17.0.32",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^9.6.0",
+		"postcss": "^8.4.39",
+		"prettier": "^3.3.2",
+		"tailwindcss": "^3.4.4",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.5.3",
+		"yargs": "^17.7.2"
+	}
+}

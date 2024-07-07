@@ -19,7 +19,7 @@
 		"build:css": "npx tailwindcss build -i global_storybook.css -o dist/styles.css --watch"
 	},
 	"devDependencies": {
-		"@types/node": "^20.14.9",
+		"@types/node": "^20.14.10",
 		"autoprefixer": "^10.4.19",
 		"eslint": "^9.6.0",
 		"postcss": "^8.4.39",

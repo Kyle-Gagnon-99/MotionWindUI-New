@@ -2,9 +2,8 @@
 	"extends": "@motionwindui/config/base.tsconfig.json",
 	"exclude": ["node_modules", "dist"],
 	"compilerOptions": {
-		"outDir": "dist/",
-		"rootDir": "../../",
+		"outDir": "dist",
+		"rootDir": "src/",
 		"declaration": true
-	},
-	"include": ["../../utils/src/*", "src/*"]
+	}
 }

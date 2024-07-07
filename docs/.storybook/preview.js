@@ -1,4 +1,5 @@
 /** @type { import('@storybook/react').Preview } */
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 // This is a global file of all styles and components put together
 // In production, this is not really used as each component is imported individually
@@ -14,6 +15,18 @@ const preview = {
             },
         },
     },
+    tags: ['autodocs']
 };
+
+export const decorators = [
+    withThemeByDataAttribute({
+        themes: {
+            light: 'light',
+            dark: 'dark',
+        },
+        defaultTheme: 'light',
+        attributeName: 'data-mode',
+    })
+]
 
 export default preview;

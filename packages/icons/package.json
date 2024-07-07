@@ -1,0 +1,33 @@
+{
+  "name": "@motionwindui/icons",
+  "version": "1.0.0",
+  "description": "A reexport of Heroicons to be used for easy access for this UI library",
+  "keywords": [
+    "heroicons",
+    "icons",
+    "motionwindui",
+    "ui",
+    "react"
+  ],
+  "author": "Kyle Gagnon <kmgagnon99@gmail.com>",
+  "homepage": "https://github.com/Kyle-Gagnon-99/MotionWindUI-New#readme",
+  "license": "ISC",
+  "main": "src/icons.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyle-Gagnon-99/MotionWindUI-New.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/icons.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/Kyle-Gagnon-99/MotionWindUI-New/issues"
+  }
+}

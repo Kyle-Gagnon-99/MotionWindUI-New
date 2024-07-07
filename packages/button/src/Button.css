@@ -1,5 +1,9 @@
 @import '@motionwindui/base/css/styles.css';
 
-.btn--test {
-    @apply bg-[var(--some-color)] hover:bg-[var(--test-color)] active:bg-[var(--test-color-2)];
+.btn--neutral-solid {
+    @apply bg-[var(--button-neutral-solid-background)] text-[var(--button-neutral-solid-text)]
+}
+
+.btn--neutral-solid:hover {
+    @apply bg-[var(--button-neutral-solid-hover-background)] text-[var(--button-neutral-solid-hover-text)]
 }

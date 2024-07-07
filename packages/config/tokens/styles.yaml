@@ -1,154 +1,3 @@
-# Design System Tokens for MotionWindUI
-#
-# File Structure
-# Each section will have a corresponding token. Each token will have a description and values. The values can be a single value or a list of key-value pairs.
-# For key-value pair values, the key will either be the name of the key (e.g. 50, 100, 200, etc.) or a mode (e.g. light, dark, etc.).
-# Modes are reserved values which can be used to define different values for different modes (e.g. light, dark, etc.).
-# 'light' and 'dark' are reserved modes to provide a basic TailwindCSS dark mode support.
-# In CSS this would generate as:
-# :root {
-#   --surface-primary: var(--some-var);
-#
-#   .dark {
-#     --surface-primary: var(--some-other-var);
-#   }
-#}
-# 
-# Any other mode can be defined and used as needed. They will generate as:
-# :root[data-theme="some-mode"] {
-#
-# In the future, there may be support for inheriting another YAML configuration and merging the values.
-# This would allow for a base configuration to be defined and then extended by other configurations.
-
-# Comment out to list other modes
-#modes:
-#  - high-contrast
-#  - low-contrast
-
-# Primitive Tokens
-# Primitive Tokens are used to define the basic building blocks for the theme of the design system.
-# Colors
-colors:
-  cardinal:
-    description: "A color used to represent danger or error."
-    values:
-      50: "#fdf4f3"
-      100: "#fce7e7"
-      200: "#f8d3d4"
-      300: "#f3aeb1"
-      400: "#eb8186"
-      500: "#df545f"
-      600: "#ca3447"
-      700: "#bb2a40"
-      800: "#8e2336"
-      900: "#7a2134"
-      950: "#440d18"    
-  brandy-punch:
-    description: "A color used to represent a warning or alert."
-    values:
-      50: "#fbf8ef"
-      100: "#f3e9d2"
-      200: "#e7d0a0"
-      300: "#dab46f"
-      400: "#d29d4d"
-      500: "#c78037"
-      600: "#b0642f"
-      700: "#934a2a"
-      800: "#793c27"
-      900: "#643323"
-      950: "#381910"
-  aqua-forest:
-    description: "A color used to represent success or confirmation."
-    values:
-      50: "#f1f8f2"
-      100: "#dcefdc"
-      200: "#bcdebe"
-      300: "#90c597"
-      400: "#67aa72"
-      500: "#3f8a4e"
-      600: "#2e6d3c"
-      700: "#255731"
-      800: "#1f4629"
-      900: "#1a3a22"
-      950: "#0e2014"  
-  warm-gray:
-    description: "A color used to represent neutral or disabled."
-    values:
-      50: "#f3f2f2"
-      100: "#e7e4e4"
-      200: "#cfc9c9"
-      300: "#b6afaf"
-      400: "#9e9494"
-      500: "#867979"
-      600: "#6b6161"
-      700: "#504949"
-      800: "#363030"
-      900: "#1f1414"
-      950: "#0f0a0a"
-  cool-gray:
-    description: "A color used to represent neutral or disabled."
-    values:
-      50: "#f5f8fa"
-      100: "#e0e6eb"
-      200: "#c2cdd6"
-      300: "#a3b4c2"
-      400: "#859aad"
-      500: "#668199"
-      600: "#52677a"
-      700: "#3d4e5c"
-      800: "#29343d"
-      900: "#141a1f"
-      950: "#0a0d0f"
-  neutral-gray:
-    description: "A color used to represent neutral or disabled."
-    values:
-      50: "#f2f3f3"
-      100: "#e5e6e6"
-      200: "#cbcccd"
-      300: "#b1b3b4"
-      400: "#97999b"
-      500: "#7d8082"
-      600: "#646668"
-      700: "#4b4d4e"
-      800: "#323334"
-      900: "#191a1a"
-      950: "#0c0d0d"
-  fuchsia-blue:
-    description: "A color used to represent a secondary action."
-    values:
-      50: "#faf6fe"
-      100: "#f2ebfc"
-      200: "#e7dafa"
-      300: "#d5bdf5"
-      400: "#bc93ed"
-      500: "#a269e3"
-      600: "#8a48d3"
-      700: "#7737b9"
-      800: "#643297"
-      900: "#52297a"
-      950: "#361259"
-  science-blue:
-    description: "A color used to represent a primary action."
-    values:
-      50: "#f1f7fe"
-      100: "#e3ecfb"
-      200: "#c0d9f7"
-      300: "#88bbf1"
-      400: "#4998e7"
-      500: "#227bd5"
-      600: "#1565c0"
-      700: "#114c93"
-      800: "#12427a"
-      900: "#153965"
-      950: "#0e2443"
-  
-# Spacing Tokens
-# Spacing Tokens are used to define the spacing of the design system. This can be used for padding, margin, radius, etc.
-
-# Typography Tokens
-# Typography Tokens are used to define the typography of the design system. This can be used for font size, font weight, line height, etc.
-
-
 # Style Tokens
 # Style Tokens use primitive tokens to define the style of the design system.
 
@@ -245,15 +94,13 @@ style-tokens:
     subtle:
       description: "A subtle background color used to create a sense of calm and focus."
       values:
-        mode:
-          light: "var(--neutral-gray-50)"
-          dark: "var(--neutral-gray-950)"
+        light: "var(--neutral-50)"
+        dark: "var(--neutral-950)"
     default:
       description: "The default background color used for the design system."
       values:
-        mode:
-          light: "var(--gray-100)"
-          dark: "var(--gray-900)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
 
   # Surface
   # Surface colors are used over the background of the design system
@@ -261,15 +108,13 @@ style-tokens:
     subtle:
       description: "A subtle surface color used for the main app. Use this color for cards, modals, and other surfaces that should not draw attention"
       values:
-        mode:
-          light: "var(--gray-100)"
-          dark: "var(--gray-900)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
     default:
       description: "A default surface color used for the main app. Use this color for cards, modals, and other surfaces that should draw attention"
       values:
-        mode:
-          light: "var(--gray-200)"
-          dark: "var(--gray-800)"
+        light: "var(--neutral-200)"
+        dark: "var(--neutral-800)"
 
   # Accent
   # Accent colors are used over the surface and background of the design app. This can be used to color components or specific parts of the UI
@@ -279,48 +124,48 @@ style-tokens:
     neutral:
       description: "A default neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     neutral-hover:
       description: "A hover neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     neutral-active:
       description: "An active neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     neutral-negative:
       description: "A negative neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-300)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-300)"
+        dark: "var(--neutral-700)"
     neutral-negative-hover:
       description: "A hover negative neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-200)"
-        dark: "var(--gray-800)"
+        light: "var(--neutral-200)"
+        dark: "var(--neutral-800)"
     neutral-negative-active:
       description: "An active negative neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-100)"
-        dark: "var(--gray-900)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
     neutral-subtle:
       description: "A subtle neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-50)"
-        dark: "var(--gray-950)"
+        light: "var(--neutral-50)"
+        dark: "var(--neutral-950)"
     neutral-subtle-hover:
       description: "A hover subtle neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-100)"
-        dark: "var(--gray-900)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
     neutral-subtle-active:
       description: "An active subtle neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-200)"
-        dark: "var(--gray-800)"
+        light: "var(--neutral-200)"
+        dark: "var(--neutral-800)"
 
     # Primary
     primary:
@@ -588,33 +433,33 @@ style-tokens:
     neutral:
       description: "A default neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-300)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-300)"
+        dark: "var(--neutral-700)"
     neutral-hover:
       description: "A hover neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-600)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-600)"
     neutral-active:
       description: "An active neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-500)"
-        dark: "var(--gray-500)"
+        light: "var(--neutral-500)"
+        dark: "var(--neutral-500)"
     neutral-negative:
       description: "A negative neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     neutral-negative-hover:
       description: "A hover negative neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-600)"
-        dark: "var(--gray-400)"
+        light: "var(--neutral-600)"
+        dark: "var(--neutral-400)"
     neutral-negative-active:
       description: "An active negative neutral border color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--gray-500)"
-        dark: "var(--gray-500)"
+        light: "var(--neutral-500)"
+        dark: "var(--neutral-500)"
 
     # Primary Border
     primary:
@@ -783,370 +628,297 @@ style-tokens:
     default:
       description: "The default text color used for the design system."
       values:
-        mode:
-          light: "var(--gray-900)"
-          dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     subtle:
       description: "A subtle text color used for the design system."
       values:
-        mode:
-          light: "var(--gray-700)"
-          dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     disabled:
       description: "A muted text color used for the design system."
       values:
-        mode:
-          light: "var(--gray-500)"
-          dark: "var(--gray-500)"
+        light: "var(--neutral-500)"
+        dark: "var(--neutral-500)"
     inverse:
       description: "An inverse text color used for the design system."
       values:
-        mode:
-          light: "var(--gray-100)"
-          dark: "var(--gray-900)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
     link:
       description: "A link text color used for the design system."
       values:
-        mode:
-          light: "var(--primary-500)"
-          dark: "var(--primary-500)"
+        light: "var(--primary-500)"
+        dark: "var(--primary-500)"
     link-hover:
       description: "A hover link text color used for the design system."
       values:
-        mode:
-          light: "var(--primary-600)"
-          dark: "var(--primary-400)"
+        light: "var(--primary-600)"
+        dark: "var(--primary-400)"
     link-active:
       description: "An active link text color used for the design system."
       values:
-        mode:
-          light: "var(--primary-700)"
-          dark: "var(--primary-300)"
+        light: "var(--primary-700)"
+        dark: "var(--primary-300)"
     link-visited:
       description: "A visited link text color used for the design system."
       values:
-        mode:
-          light: "var(--primary-700)"
-          dark: "var(--primary-300)"
+        light: "var(--primary-700)"
+        dark: "var(--primary-300)"
     link-disabled:
       description: "A disabled link text color used for the design system."
       values:
-        mode:
-          light: "var(--gray-500)"
-          dark: "var(--gray-500)"
+        light: "var(--neutral-500)"
+        dark: "var(--neutral-500)"
 
     # On Neutral / Neutral Text
     on-neutral:
       description: "A text color on a neutral background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-neutral-hover:
       description: "A text color on a hover neutral background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-neutral-active:
       description: "A text color on an active neutral background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-neutral-disabled:
       description: "A text color on a disabled neutral background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-neutral-subtle-subtle:
       description: "A subtle text color on a subtle neutral background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     neutral:
       description: "A neutral (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     neutral-hover:
       description: "A hover neutral text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     neutral-active:
       description: "An active neutral text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
 
     # On Primary / Primary Text
     on-primary:
       description: "A text color on a primary background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-primary-hover:
       description: "A text color on a hover primary background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-primary-active:
       description: "A text color on an active primary background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-primary-disabled:
       description: "A text color on a disabled primary background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-primary-subtle-subtle:
       description: "A subtle text color on a subtle primary background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     primary:
       description: "A primary (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     primary-hover:
       description: "A hover primary text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     primary-active:
       description: "An active primary text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
 
     # On Secondary / Secondary Text
     on-secondary:
       description: "A text color on a secondary background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-secondary-hover:
       description: "A hover text color on a secondary background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-secondary-active:
       description: "An active text color on a secondary background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-secondary-disabled:
       description: "A disabled text color on secondary background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-secondary-subtle-subtle:
       description: "A subtle text color on a subtle secondary background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     secondary:
       description: "A secondary (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     secondary-hover:
       description: "A hover secondary text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     secondary-active:
       description: "An active secondary text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
 
     # On Success / Success Text
     on-success:
       description: "A text color on a success background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-success-hover:
       description: "A hover text color on a success background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-success-active:
       description: "An active text color on a success background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-success-disabled:
       description: "A disabled text color on success background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-success-subtle-subtle:
       description: "A subtle text color on a subtle success background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     success:
       description: "A success (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     success-hover:
       description: "A hover success text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     success-active:
       description: "An active success text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
 
     # On Warning / Warning Text
     on-warning:
       description: "A text color on a warning background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-warning-hover:
       description: "A hover text color on a warning background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-warning-active:
       description: "An active text color on a warning background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-warning-disabled:
       description: "A disabled text color on warning background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-warning-subtle-subtle:
       description: "A subtle text color on a subtle warning background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     warning:
       description: "A warning (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     warning-hover:
       description: "A hover warning text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     warning-active:
       description: "An active warning text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
 
     # On Danger / Danger Text
     on-danger:
       description: "A text color on a danger background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-danger-hover:
       description: "A hover text color on a danger background"
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     on-danger-active:
       description: "An active text color on a danger background"
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
     on-danger-disabled:
       description: "A disabled text color on danger background"
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     on-danger-subtle-subtle:
       description: "A subtle text color on a subtle danger background"
       values:
-        light: "var(--gray-400)"
-        dark: "var(--gray-700)"
+        light: "var(--neutral-400)"
+        dark: "var(--neutral-700)"
     danger:
       description: "A danger (default) text color used for the design system."
       values:
-        light: "var(--gray-900)"
-        dark: "var(--gray-100)"
+        light: "var(--neutral-900)"
+        dark: "var(--neutral-100)"
     danger-hover:
       description: "A hover danger text color used for the design system."
       values:
-        light: "var(--gray-800)"
-        dark: "var(--gray-200)"
+        light: "var(--neutral-800)"
+        dark: "var(--neutral-200)"
     danger-active:
       description: "An active danger text color used for the design system."
       values:
-        light: "var(--gray-700)"
-        dark: "var(--gray-300)"
-    
-
-# Component Tokens
-# Component Tokens are used to define parts of a UI component (e.g. button, input, etc.). Parts of a component are seperated to allow for more flexibility in theming.
-# Parts of a component include: background, border, text, and shadow. These should also have defined states (e.g. hover, focus, active, etc.).
-components:
-  button:
-    neutral:
-      solid:
-        background:
-          description: "The default background color of a neutral button."
-          values: "var(--accent-neutral)"
-        text:
-          description: "The default text color of a neutral button."
-          values: "var(--text-neutral)"
-        hover:
-          background:
-            description: "The hover background color of a neutral button."
-            values: "var(--accent-neutral-hover)"
-          text:
-            description: "The hover text color of a neutral button."
-            values: "var(--text-neutral-hover)"
-        active:
-          background:
-            description: "The active background color of a neutral button."
-            values: "var(--accent-neutral-active)"
-          text:
-            description: "The active text color of a neutral button."
-            values: "var(--text-neutral-active)"
-        focus:
-          outline:
-            description: "The focus outline color of a neutral button."
-            values: "var(--focus-outline)"
-        disabled:
-          opacity:
-            description: "The opacity of a disabled neutral button."
-            values: "var(--opacity-disabled)"
-      faded:
-        text:
-          description: "The default text color of a faded neutral button."
-          values: "var(--text-neutral)"
-        hover:
-          text:
-            description: "The hover text color of a faded neutral button."
-            values: "var(--text-neutral-hover)"
-          background:
-            description: "The hover background color of a faded neutral button."
-            values: "var(--accent-neutral-subtle)"
-        active:
-          text:
-            description: "The active text color of a faded neutral button."
-            values: "var(--text-neutral-active)"
-          background:
-            description: "The active background color of a faded neutral button."
-            values: "var(--accent-neutral-subtle-hover)"
-        focus:
-          outline:
-            description: "The focus outline color of a faded neutral button."
-            values: "var(--focus-outline)"
-        disabled:
-          opacity:
-            description: "The opacity of a disabled faded neutral button."
-            values: "var(--opacity-disabled)"
-        
+        light: "var(--neutral-700)"
+        dark: "var(--neutral-300)"
