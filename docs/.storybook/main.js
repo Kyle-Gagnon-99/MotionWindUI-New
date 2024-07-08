@@ -13,7 +13,7 @@ const config = {
     stories: [
         "../../packages/**/src/*.mdx",
         "../../packages/**/src/*.stories.@(js|jsx|mjs|ts|tsx)",
-        "../*.mdx"
+        "../DesignSystem/*.mdx"
     ],
     addons: [
         getAbsolutePath("@storybook/addon-onboarding"),

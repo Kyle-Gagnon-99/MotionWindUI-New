@@ -1,0 +1,142 @@
+import { Meta, Typeset } from '@storybook/blocks';
+
+<Meta title='Design System/Typography'/>
+
+export const titleTypography = {
+    type: {
+        title: '"Inter", sans-serif'
+    },
+    weight: {
+        regular: '400',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+    },
+    sizes: {
+        12: "0.75rem",
+        14: "0.875rem",
+        16: "1rem",
+        18: "1.125rem",
+        20: "1.25rem",
+        24: "1.5rem",
+        30: "1.875rem",
+        36: "2.25rem",
+        48: "3rem",
+        60: "3.75rem",
+        72: "4.5rem",
+    }
+}
+
+export const bodyTypography = {
+    type: {
+        title: '"Inter", sans-serif'
+    },
+    weight: {
+        regular: '400',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
+    },
+    sizes: {
+        12: "0.75rem",
+        14: "0.875rem",
+        16: "1rem",
+        18: "1.125rem",
+        20: "1.25rem",
+        24: "1.5rem",
+        30: "1.875rem",
+        36: "2.25rem",
+        48: "3rem",
+        60: "3.75rem",
+        72: "4.5rem",
+    }
+}
+
+export const codeTypography = {
+    type: {
+        title: '"Fira Code", monospace'
+    },
+    weight: {
+        regular: '400',
+    },
+    sizes: {
+        16: "1rem",
+    }
+}
+
+export const sampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Typography
+
+The typography below shows the font family, font weight, and font sizes that are used in the design system.
+
+## Title
+
+The title typography is used for headings and titles.
+
+**Font:** {titleTypography.type.title}
+ 
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+<Typeset 
+    fontSizes={[
+        titleTypography.sizes[12],
+        titleTypography.sizes[14],
+        titleTypography.sizes[16],
+        titleTypography.sizes[18],
+        titleTypography.sizes[20],
+        titleTypography.sizes[24],
+        titleTypography.sizes[30],
+        titleTypography.sizes[36],
+        titleTypography.sizes[48],
+        titleTypography.sizes[60],
+        titleTypography.sizes[72],
+    ]}
+    fontWeight={titleTypography.weight.bold}
+    sampleText={sampleText}
+    fontFamily={titleTypography.type.title}
+/>
+
+## Body
+
+The body typography is used for paragraphs and body text.
+
+**Font:** {bodyTypography.type.title}
+ 
+**Weights:** 400(regular), 700(bold), 800(extrabold), 900(black)
+
+<Typeset 
+    fontSizes={[
+        bodyTypography.sizes[12],
+        bodyTypography.sizes[14],
+        bodyTypography.sizes[16],
+        bodyTypography.sizes[18],
+        bodyTypography.sizes[20],
+        bodyTypography.sizes[24],
+        bodyTypography.sizes[30],
+        bodyTypography.sizes[36],
+        bodyTypography.sizes[48],
+        bodyTypography.sizes[60],
+        bodyTypography.sizes[72],
+    ]}
+    fontWeight={bodyTypography.weight.bold}
+    sampleText={sampleText}
+    fontFamily={bodyTypography.type.title}
+/>
+
+## Code
+
+The code typography is used for code snippets and inline code.
+
+**Font:** {codeTypography.type.title}
+ 
+**Weights:** 400(regular)
+
+<Typeset 
+    fontSizes={[
+        codeTypography.sizes[16],
+    ]}
+    fontWeight={codeTypography.weight.regular}
+    sampleText={'const message = "Hello, World!";'}
+    fontFamily={codeTypography.type.title}
+/>

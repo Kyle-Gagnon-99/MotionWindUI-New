@@ -1,0 +1,4 @@
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 8px; text-align: left; border-bottom: 1px solid #227bd5; }
+  .spacing-bar { background-color: #227bd5; height: 16px; }
+  .radius-box { background-color: #227bd5; height: 32px; width: 32px; display: inline-block; }
