@@ -11,13 +11,9 @@ const DARK_RESERVED_KEYWORD = 'dark';
 /**
  * General arguments for generating files
  */
-interface CssArgs extends Arguments {
+interface GeneralArgs extends Arguments {
 	input: string;
 	output: string;
-}
-
-interface MdxArgs extends Arguments {
-	cssFile: string;
 }
 
 interface CssOutput {
@@ -35,44 +31,37 @@ interface DesignToken {
 }
 
 yargs(hideBin(process.argv))
+	.option('i', {
+		alias: 'input',
+		demandOption: true,
+		describe: 'Input YAML design token file',
+		type: 'string',
+	})
+	.option('o', {
+		alias: 'output',
+		demandOption: true,
+		describe: 'Output CSS file',
+		type: 'string',
+	})
 	.command(
 		['css', '$0'],
 		'Generates a resulting CSS file',
-		(y) => {
-			y.option('i', {
-				alias: 'input',
-				demandOption: true,
-				describe: 'Input YAML design token file',
-				type: 'string',
-			}).option('o', {
-				alias: 'output',
-				demandOption: true,
-				describe: 'Output CSS file',
-				type: 'string',
-			});
-		},
+		() => {},
 		(argv) => {
-			generateCssMain(argv as unknown as CssArgs);
+			generateCssMain(argv as unknown as GeneralArgs);
 		}
 	)
 	.command(
-		['mdx'],
-		'Generate MDX documentation',
-		(y) => {
-			y.option('c', {
-				alias: 'css-file',
-				demandOption: false,
-				describe:
-					'The CSS file to use for generating MDX documentation',
-			});
-		},
+		['json'],
+		'Generate JSON documentation for MDX',
+		() => {},
 		(argv) => {
-			generateMdxMain(argv as unknown as MdxArgs);
+			generateJsonMain(argv as unknown as GeneralArgs);
 		}
 	)
 	.parseSync();
 
-function generateCssMain(argv: CssArgs) {
+function generateCssMain(argv: GeneralArgs) {
 	console.log(argv.input, argv.output);
 	generateCssFile(argv.input, argv.output);
 }
@@ -231,11 +220,16 @@ function generateCssFile(inputPath: string, outputPath: string): void {
 
 function generateJson(
 	tokens: Record<string, any>,
-	prefix = '--'
+	prefix = '--',
+	isFirst: boolean = true
 ): Record<string, any> {
 	const result: Record<string, any> = {};
 
-	function addTokens(tokenDict: Record<string, any>, prefix: string) {
+	function addTokens(
+		tokenDict: Record<string, any>,
+		prefix: string,
+		isFirst: boolean
+	) {
 		for (const key in tokenDict) {
 			const value = tokenDict[key];
 
@@ -262,31 +256,25 @@ function generateJson(
 					}
 				}
 			} else if (value && typeof value === 'object') {
-				addTokens(value, `${prefix}${key}-`);
+				const skipKey = isFirst ? '' : `${key}-`;
+				addTokens(value, `${prefix}${skipKey}`, false);
 			}
 		}
 	}
 
-	addTokens(tokens, prefix);
+	addTokens(tokens, prefix, isFirst);
 
 	return result;
 }
 
 function convertYAMLtoJSON(yamlFilePath: string, jsonFilePath: string) {
-	try {
-		const fileContents = readFileSync(yamlFilePath, 'utf8');
-		const data = loadYaml(fileContents);
-		console.log(data);
-		const jsonData = generateJson(data);
-		writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
-		console.log(
-			`Successfully converted ${yamlFilePath} to ${jsonFilePath}`
-		);
-	} catch (error: any) {
-		console.error(`Error converting YAML to JSON: ${error.message}`);
-	}
+	const data = loadYaml(yamlFilePath);
+	console.log(data);
+	const jsonData = generateJson(data);
+	writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
+	console.log(`Successfully converted ${yamlFilePath} to ${jsonFilePath}`);
 }
 
-function generateMdxMain(args: MdxArgs) {
-	convertYAMLtoJSON('../config/motionwindui-tokens.yaml', 'tokens.json');
+function generateJsonMain(args: GeneralArgs) {
+	convertYAMLtoJSON(args.input, args.output);
 }

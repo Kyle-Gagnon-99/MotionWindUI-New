@@ -1,0 +1,86 @@
+import React, { useState } from 'react';
+import { Meta } from '@storybook/blocks';
+import tokens from './tokens.json';
+
+<Meta title="Design System/Design Tokens" />
+
+export const isColor = (value) => {
+  const hexPattern = /^#([0-9A-F]{3}){1,2}$/i;
+  const hexAlphaPattern = /^#([0-9A-F]{4}){1,2}$/i;
+  const rgbPattern = /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/;
+  const rgbaPattern = /^rgba\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(0|1|0?\.\d+)\)$/;
+  const hslPattern = /^hsl\(\d{1,3},\s*([0-9]{1,2}|100)%,\s*([0-9]{1,2}|100)%\)$/;
+  const hslaPattern = /^hsla\(\d{1,3},\s*([0-9]{1,2}|100)%,\s*([0-9]{1,2}|100)%,\s*(0|1|0?\.\d+)\)$/;
+  return (
+    hexPattern.test(value) ||
+    hexAlphaPattern.test(value) ||
+    rgbPattern.test(value) ||
+    rgbaPattern.test(value) ||
+    hslPattern.test(value) ||
+    hslaPattern.test(value)
+  );
+};
+
+export const TokenTable = () => {
+    const [search, setSearch] = useState('');
+    const filteredTokens = Object.keys(tokens).filter((key) => key.toLowerCase().includes(search.toLowerCase()));
+
+    return (
+        <div className='token-table-container'>
+            <input
+                type="text"
+                placeholder='Search tokens...' 
+                value={search} 
+                onChange={(e) => setSearch(e.target.value)}
+                className='token-search'
+            />
+            <table className='token-table'>
+                <thead>
+                    <tr>
+                        <th>Token</th>
+                        <th>Light Mode</th>
+                        <th>Dark Mode</th>
+                        <th>Light Mode Preview</th>
+                        <th>Dark Mode Preview</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {filteredTokens.map((token) => (
+                        <tr key={token}>
+                            <td>{token}</td>
+                            <td>{tokens[token].light || 'N/A'}</td>
+                            <td>{tokens[token].dark || 'N/A'}</td>
+                            <td>
+                                {tokens[token].light && isColor(tokens[token].light) && (
+                                    <div
+                                        className='color-preview'
+                                        style={{ backgroundColor: tokens[token].light }}
+                                    />                                        
+                                )}
+                            </td>
+                            <td>
+                                {tokens[token].dark && isColor(tokens[token].dark) && (
+                                    <div
+                                        className='color-preview'
+                                        style={{ backgroundColor: tokens[token].dark }}
+                                    />                                        
+                                )}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    )
+}
+
+# Design Tokens
+
+Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes. We use them in place of hard-coded values (such as hex values for color or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development. There is a preview of colors so far but that's it. There is no alias resolution or anything like that.
+
+## Tokens
+
+The following table lists all the design tokens available in the design system. You can search for a specific token using the search bar!
+
+<TokenTable />
+
