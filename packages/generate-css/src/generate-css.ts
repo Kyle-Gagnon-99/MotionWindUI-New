@@ -3,7 +3,7 @@
 import yargs, { Arguments } from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { loadYaml, Tokens } from './yamlUtils';
-import { existsSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 
 const LIGHT_RESERVED_KEYWORD = 'light';
 const DARK_RESERVED_KEYWORD = 'dark';
@@ -11,9 +11,13 @@ const DARK_RESERVED_KEYWORD = 'dark';
 /**
  * General arguments for generating files
  */
-interface GenerateArguments extends Arguments {
+interface CssArgs extends Arguments {
 	input: string;
 	output: string;
+}
+
+interface MdxArgs extends Arguments {
+	cssFile: string;
 }
 
 interface CssOutput {
@@ -21,30 +25,54 @@ interface CssOutput {
 	modes: Record<string, string[]>;
 }
 
+// Define the structure of your token
+interface DesignToken {
+	values: {
+		light?: string;
+		dark?: string;
+		modes?: Record<string, string>;
+	};
+}
+
 yargs(hideBin(process.argv))
-	.option('i', {
-		alias: 'input',
-		demandOption: true,
-		describe: 'Input YAML design token file',
-		type: 'string',
-	})
-	.option('o', {
-		alias: 'output',
-		demandOption: true,
-		describe: 'Output CSS file',
-		type: 'string',
-	})
 	.command(
 		['css', '$0'],
 		'Generates a resulting CSS file',
-		() => {},
+		(y) => {
+			y.option('i', {
+				alias: 'input',
+				demandOption: true,
+				describe: 'Input YAML design token file',
+				type: 'string',
+			}).option('o', {
+				alias: 'output',
+				demandOption: true,
+				describe: 'Output CSS file',
+				type: 'string',
+			});
+		},
 		(argv) => {
-			generateCssMain(argv as unknown as GenerateArguments);
+			generateCssMain(argv as unknown as CssArgs);
+		}
+	)
+	.command(
+		['mdx'],
+		'Generate MDX documentation',
+		(y) => {
+			y.option('c', {
+				alias: 'css-file',
+				demandOption: false,
+				describe:
+					'The CSS file to use for generating MDX documentation',
+			});
+		},
+		(argv) => {
+			generateMdxMain(argv as unknown as MdxArgs);
 		}
 	)
 	.parseSync();
 
-function generateCssMain(argv: GenerateArguments) {
+function generateCssMain(argv: CssArgs) {
 	console.log(argv.input, argv.output);
 	generateCssFile(argv.input, argv.output);
 }
@@ -199,4 +227,66 @@ function generateCssFile(inputPath: string, outputPath: string): void {
 	// Write the CSS content to the file
 	writeFileSync(outputPath, cssContent.join('\n'), 'utf8');
 	console.log(`CSS file generated at ${outputPath}`);
+}
+
+function generateJson(
+	tokens: Record<string, any>,
+	prefix = '--'
+): Record<string, any> {
+	const result: Record<string, any> = {};
+
+	function addTokens(tokenDict: Record<string, any>, prefix: string) {
+		for (const key in tokenDict) {
+			const value = tokenDict[key];
+
+			if (value && typeof value === 'object' && 'values' in value) {
+				const values = value['values'];
+				const tokenName = `${prefix}${key}`;
+
+				if (values && typeof values === 'string') {
+					result[tokenName] = { light: values };
+				} else if (
+					LIGHT_RESERVED_KEYWORD in values &&
+					DARK_RESERVED_KEYWORD in values
+				) {
+					result[tokenName] = {
+						light: values[LIGHT_RESERVED_KEYWORD],
+						dark: values[DARK_RESERVED_KEYWORD],
+					};
+				} else if ('modes' in values) {
+					result[tokenName] = { ...values['modes'] };
+				} else if (typeof values === 'object') {
+					for (const subKey in values as Record<string, string>) {
+						const subValue = values[subKey];
+						result[`${tokenName}-${subKey}`] = { light: subValue };
+					}
+				}
+			} else if (value && typeof value === 'object') {
+				addTokens(value, `${prefix}${key}-`);
+			}
+		}
+	}
+
+	addTokens(tokens, prefix);
+
+	return result;
+}
+
+function convertYAMLtoJSON(yamlFilePath: string, jsonFilePath: string) {
+	try {
+		const fileContents = readFileSync(yamlFilePath, 'utf8');
+		const data = loadYaml(fileContents);
+		console.log(data);
+		const jsonData = generateJson(data);
+		writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2), 'utf8');
+		console.log(
+			`Successfully converted ${yamlFilePath} to ${jsonFilePath}`
+		);
+	} catch (error: any) {
+		console.error(`Error converting YAML to JSON: ${error.message}`);
+	}
+}
+
+function generateMdxMain(args: MdxArgs) {
+	convertYAMLtoJSON('../config/motionwindui-tokens.yaml', 'tokens.json');
 }

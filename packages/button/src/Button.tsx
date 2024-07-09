@@ -81,14 +81,7 @@ function Button({
     </motion.button>
   ) : (
     <button
-      className={clsxMerge(
-        buttonStyles({
-          buttonType: "neutral-solid",
-          size,
-          radius,
-          className,
-        }),
-      )}
+      className={clsxMerge("bg-[var(--accent-neutral)] text-blue-400")}
       disabled={disabledState}
       {...props}
     >
