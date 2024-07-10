@@ -98,7 +98,7 @@ function generateCss(
 
 				// Next check if there is a 'light' and 'dark' key, if so this is a key with a light and dark mode
 				if (values && typeof values === 'string') {
-					defaultCss.push(`\t${prefix}${key}: ${values}`);
+					defaultCss.push(`\t${prefix}${key}: ${values};`);
 				} else if (
 					LIGHT_RESERVED_KEYWORD in values &&
 					DARK_RESERVED_KEYWORD in values

@@ -1,14 +1,20 @@
-import React, { ComponentPropsWithoutRef } from "react";
-import "@motionwindui/base/css/styles.css";
-import "./Button.css";
-import { HTMLMotionProps, motion } from "framer-motion";
-import { VariantProps } from "class-variance-authority";
-import { buttonStyles } from "./buttonStyles";
-import { clsxMerge } from "../../utils/src/utils";
+import React, { ComponentPropsWithoutRef, ReactElement } from 'react';
+import '@motionwindui/base/css/styles.css';
+import './Button.css';
+import { HTMLMotionProps, motion } from 'framer-motion';
+import { VariantProps } from 'class-variance-authority';
+import { buttonStyles, iconStyles } from './buttonStyles';
+import { clsxMerge } from '../../utils/src/utils';
+import {
+  IconOutline,
+  IconSolid,
+  IconSpinners,
+  IconWrapper,
+} from '@motionwindui/base/src';
 
-type ButtonElementProps = ComponentPropsWithoutRef<"button">;
+type ButtonElementProps = ComponentPropsWithoutRef<'button'>;
 
-type MotionProps = Omit<HTMLMotionProps<"button">, keyof ButtonElementProps>;
+type MotionProps = Omit<HTMLMotionProps<'button'>, keyof ButtonElementProps>;
 
 export interface ButtonProps
   extends VariantProps<typeof buttonStyles>,
@@ -16,21 +22,27 @@ export interface ButtonProps
     ButtonElementProps {
   /** The color/intentions of the button */
   color?:
-    | "neutral"
-    | "primary"
-    | "secondary"
-    | "success"
-    | "warning"
-    | "danger";
+    | 'neutral'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'danger';
 
   /** The variation of the button */
-  variant?: "solid" | "faded" | "bordered" | "ghost";
+  variant?: 'solid' | 'faded' | 'bordered' | 'ghost';
 
   /** The size of the button */
-  size?: "sm" | "md" | "lg" | "default";
+  size?: 'sm' | 'md' | 'lg' | 'default';
 
   /** The radius of the button */
-  radius?: "sm" | "md" | "lg" | "xl" | "full" | "default";
+  radius?: 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'default';
+
+  /** The icon to be displayed before the text */
+  leadingIcon?: ReactElement | IconOutline | IconSolid | IconSpinners;
+
+  /** The icon to be displayed before the text */
+  trailingIcon?: ReactElement | IconOutline | IconSolid | IconSpinners;
 
   /** Whether or not to use Framer Motion animations */
   animate?: boolean;
@@ -47,19 +59,25 @@ export interface ButtonProps
   /** Whether or not the button is disabled */
   disabled?: boolean;
 
+  /** Whether or not to show the children */
+  showChildren?: boolean;
+
   /* Any React children */
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 function Button({
   className,
-  color = "primary",
-  variant = "solid",
-  size = "default",
-  radius = "default",
+  color = 'primary',
+  variant = 'solid',
+  size = 'default',
+  radius = 'default',
+  leadingIcon,
+  trailingIcon,
   animate = true,
   animateOnDisable = false,
   disabled,
+  showChildren = true,
   children,
   isLoading,
   ...props
@@ -70,22 +88,86 @@ function Button({
       ? (props as MotionProps)
       : {};
 
+  const buttonContent = (
+    <>
+      {leadingIcon && (
+        <IconWrapper
+          icon={leadingIcon}
+          className={clsxMerge(
+            iconStyles({
+              buttonType: 'neutral-solid',
+              size,
+            }),
+          )}
+        />
+      )}
+      {showChildren && children}
+      {trailingIcon && (
+        <IconWrapper
+          icon={trailingIcon}
+          className={clsxMerge(
+            iconStyles({
+              buttonType: 'neutral-solid',
+              size,
+            }),
+          )}
+        />
+      )}
+    </>
+  );
+
   return animate && (!disabledState || animateOnDisable) ? (
     <motion.button
-      className={clsxMerge("bg-[var(--accent-neutral)] text-blue-400")}
+      className={clsxMerge(
+        buttonStyles({
+          buttonType: 'neutral-solid',
+          size,
+          radius,
+          className,
+        }),
+      )}
       whileTap={{ scale: 0.95 }}
       disabled={disabledState}
       {...motionProps}
     >
-      {children}
+      {buttonContent}
     </motion.button>
   ) : (
     <button
-      className={clsxMerge("bg-[var(--accent-neutral)] text-blue-400")}
+      className={clsxMerge(
+        buttonStyles({
+          buttonType: 'neutral-solid',
+          size,
+          radius,
+          className,
+        }),
+      )}
       disabled={disabledState}
       {...props}
     >
-      {children}
+      {leadingIcon && (
+        <IconWrapper
+          icon={leadingIcon}
+          className={clsxMerge(
+            iconStyles({
+              buttonType: 'neutral-solid',
+              size,
+            }),
+          )}
+        />
+      )}
+      {showChildren && children}
+      {trailingIcon && (
+        <IconWrapper
+          icon={trailingIcon}
+          className={clsxMerge(
+            iconStyles({
+              buttonType: 'neutral-solid',
+              size,
+            }),
+          )}
+        />
+      )}
     </button>
   );
 }

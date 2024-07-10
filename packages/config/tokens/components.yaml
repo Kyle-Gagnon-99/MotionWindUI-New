@@ -10,14 +10,14 @@ components:
           values: "var(--accent-neutral)"
         text:
           description: "The default text color of a neutral button."
-          values: "var(--text-neutral)"
+          values: "var(--text-on-neutral)"
         hover:
           background:
             description: "The hover background color of a neutral button."
             values: "var(--accent-neutral-hover)"
           text:
             description: "The hover text color of a neutral button."
-            values: "var(--text-neutral-hover)"
+            values: "var(--text-on-neutral-hover)"
         active:
           background:
             description: "The active background color of a neutral button."

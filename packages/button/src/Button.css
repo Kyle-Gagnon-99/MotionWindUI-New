@@ -1,9 +1,21 @@
 @import '@motionwindui/base/css/styles.css';
 
 .btn--neutral-solid {
-    @apply bg-[var(--button-neutral-solid-background)] text-[var(--button-neutral-solid-text)]
+    @apply bg-[var(--button-neutral-solid-background)] text-[--button-neutral-solid-text]
 }
 
 .btn--neutral-solid:hover {
     @apply bg-[var(--button-neutral-solid-hover-background)] text-[var(--button-neutral-solid-hover-text)]
+}
+
+.btn--text-test-sm {
+    font-size: 1rem;
+}
+
+.btn--text-test-md {
+    font-size: 1.25rem;
+}
+
+.btn--text-test-lg {
+    font-size: 1.5rem;
 }

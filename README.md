@@ -21,6 +21,7 @@ The project uses several tools to help with development and testing:
 - [Heroicons](https://heroicons.com/): Heroicons is a set of free MIT-licensed high-quality SVG icons for you to use in your web projects.
 - [Storybook](https://storybook.js.org/): Storybook is an open-source tool for developing UI components in isolation. It provides a live preview of components and allows you to develop, test, showcase, and document components.
 - [Lerna](https://lerna.js.org/): Lerna is a tool for managing JavaScript projects with multiple packages. It optimizes the workflow around managing multi-package repositories with git and npm.
+- [Iconify.Design](https://icon-sets.iconify.design/svg-spinners/): Iconify.Design is a collection of high-quality SVG spinners that can be used in web projects.
 
 ## Installation
 
@@ -108,6 +109,7 @@ This project is inspired by several other UI libraries, design systems, and tool
 - [TailwindCSS](https://tailwindcss.com/): TailwindCSS is a utility-first CSS framework for rapidly building custom designs.
 - [shadcn/ui](https://ui.shadcn.com/): Beautifully designed components that you can copy and paste into your apps.
 - [TD Sunshine](https://www.youtube.com/@TDSunshine): TD Sunshine is a channel dedicated to helping you learn Figma and UX design in a fun and engaging way.
+- [Iconify.Design](https://icon-sets.iconify.design/svg-spinners/): Iconify.Design is a collection of high-quality SVG spinners that can be used in web projects.
 
 Please consider supporting these projects and creators! They have done amazing work and have inspired me to create this project.
 

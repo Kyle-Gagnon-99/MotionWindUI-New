@@ -1,11 +1,42 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, IconGallery, IconItem } from '@storybook/blocks';
+import { outlineIconMap, solidIconMap, spinnerIconMap } from '../../packages/base/src/icons';
+import  IconWrapper from '../../packages/base/src/IconWrapper';
+import './mdx-stylesheet.css';
 
 <Meta title='Design System/Icons'/>
 
 # Icons
 
-The icon system is a reexport of the [Heroicons](https://heroicons.com/) library. The icons are available in two variants: `outline` and `solid`. The icons are available in a variety of sizes and can be used in any context where an SVG can be used.
+The icon system is a reexport of the [Heroicons](https://heroicons.com/) library. The icons are available in two variants: `outline` and `solid`. The icons are available in a variety of sizes and can be used in any context where an SVG can be used. On top of the Heroicons, there is also a reexport of SVG spinners from [Iconify.Design](https://icon-sets.iconify.design/svg-spinners/).
 
 ## Icon Gallery
 
-TBD
+### Outline
+
+<IconGallery>
+  {Object.keys(outlineIconMap).map((icon) => (
+    <IconItem key={icon} name={outlineIconMap[icon].title}>
+        <IconWrapper icon={icon} />
+    </IconItem>
+  ))}
+</IconGallery>
+
+### Solid
+
+<IconGallery>
+  {Object.keys(solidIconMap).map((icon) => (
+    <IconItem key={icon} name={solidIconMap[icon].title}>
+        <IconWrapper icon={icon} />
+    </IconItem>
+  ))}
+</IconGallery>
+
+### Spinners
+
+<IconGallery>
+    {Object.keys(spinnerIconMap).map((icon) => (
+        <IconItem key={icon} name={spinnerIconMap[icon].title}>
+            <IconWrapper icon={icon} className='test-icon-fill'/>
+        </IconItem>
+    ))}
+</IconGallery>

@@ -1,0 +1,3 @@
+{
+	"extends": "@motionwindui/config/base.tsconfig.json"
+}

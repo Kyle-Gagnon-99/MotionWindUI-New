@@ -124,17 +124,17 @@ style-tokens:
     neutral:
       description: "A default neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--neutral-700)"
+        light: "var(--neutral-600)"
         dark: "var(--neutral-300)"
     neutral-hover:
       description: "A hover neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--neutral-800)"
+        light: "var(--neutral-700)"
         dark: "var(--neutral-200)"
     neutral-active:
       description: "An active neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
       values:
-        light: "var(--neutral-900)"
+        light: "var(--neutral-800)"
         dark: "var(--neutral-100)"
     neutral-negative:
       description: "A negative neutral accent color used on top of surfaces/background. Used for things like buttons, links, and other interactive elements."
@@ -675,18 +675,18 @@ style-tokens:
     on-neutral:
       description: "A text color on a neutral background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--neutral-50)"
+        dark: "var(--neutral-800)"
     on-neutral-hover:
       description: "A text color on a hover neutral background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--neutral-100)"
+        dark: "var(--neutral-900)"
     on-neutral-active:
       description: "A text color on an active neutral background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--neutral-200)"
+        dark: "var(--neutral-950)"
     on-neutral-disabled:
       description: "A text color on a disabled neutral background"
       values:
