@@ -759,169 +759,169 @@ style-tokens:
     on-secondary:
       description: "A text color on a secondary background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--secondary-900)"
+        dark: "var(--secondary-100)"
     on-secondary-hover:
       description: "A hover text color on a secondary background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--secondary-800)"
+        dark: "var(--secondary-200)"
     on-secondary-active:
       description: "An active text color on a secondary background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--secondary-700)"
+        dark: "var(--secondary-300)"
     on-secondary-disabled:
       description: "A disabled text color on secondary background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--secondary-900)"
+        dark: "var(--secondary-100)"
     on-secondary-subtle-subtle:
       description: "A subtle text color on a subtle secondary background"
       values:
-        light: "var(--neutral-400)"
-        dark: "var(--neutral-700)"
+        light: "var(--secondary-400)"
+        dark: "var(--secondary-700)"
     secondary:
       description: "A secondary (default) text color used for the design system."
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--secondary-900)"
+        dark: "var(--secondary-100)"
     secondary-hover:
       description: "A hover secondary text color used for the design system."
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--secondary-800)"
+        dark: "var(--secondary-200)"
     secondary-active:
       description: "An active secondary text color used for the design system."
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--secondary-700)"
+        dark: "var(--secondary-300)"
 
     # On Success / Success Text
     on-success:
       description: "A text color on a success background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--success-900)"
+        dark: "var(--success-100)"
     on-success-hover:
       description: "A hover text color on a success background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--success-800)"
+        dark: "var(--success-200)"
     on-success-active:
       description: "An active text color on a success background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--success-700)"
+        dark: "var(--success-300)"
     on-success-disabled:
       description: "A disabled text color on success background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--success-900)"
+        dark: "var(--success-100)"
     on-success-subtle-subtle:
       description: "A subtle text color on a subtle success background"
       values:
-        light: "var(--neutral-400)"
-        dark: "var(--neutral-700)"
+        light: "var(--success-400)"
+        dark: "var(--success-700)"
     success:
       description: "A success (default) text color used for the design system."
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--success-900)"
+        dark: "var(--success-100)"
     success-hover:
       description: "A hover success text color used for the design system."
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--success-800)"
+        dark: "var(--success-200)"
     success-active:
       description: "An active success text color used for the design system."
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--success-700)"
+        dark: "var(--success-300)"
 
     # On Warning / Warning Text
     on-warning:
       description: "A text color on a warning background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--warning-900)"
+        dark: "var(--warning-100)"
     on-warning-hover:
       description: "A hover text color on a warning background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--warning-800)"
+        dark: "var(--warning-200)"
     on-warning-active:
       description: "An active text color on a warning background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--warning-700)"
+        dark: "var(--warning-300)"
     on-warning-disabled:
       description: "A disabled text color on warning background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--warning-900)"
+        dark: "var(--warning-100)"
     on-warning-subtle-subtle:
       description: "A subtle text color on a subtle warning background"
       values:
-        light: "var(--neutral-400)"
-        dark: "var(--neutral-700)"
+        light: "var(--warning-400)"
+        dark: "var(--warning-700)"
     warning:
       description: "A warning (default) text color used for the design system."
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--warning-900)"
+        dark: "var(--warning-100)"
     warning-hover:
       description: "A hover warning text color used for the design system."
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--warning-800)"
+        dark: "var(--warning-200)"
     warning-active:
       description: "An active warning text color used for the design system."
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--warning-700)"
+        dark: "var(--warning-300)"
 
     # On Danger / Danger Text
     on-danger:
       description: "A text color on a danger background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--danger-900)"
+        dark: "var(--danger-100)"
     on-danger-hover:
       description: "A hover text color on a danger background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--danger-800)"
+        dark: "var(--danger-200)"
     on-danger-active:
       description: "An active text color on a danger background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--danger-700)"
+        dark: "var(--danger-300)"
     on-danger-disabled:
       description: "A disabled text color on danger background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--danger-900)"
+        dark: "var(--danger-100)"
     on-danger-subtle-subtle:
       description: "A subtle text color on a subtle danger background"
       values:
-        light: "var(--neutral-400)"
-        dark: "var(--neutral-700)"
+        light: "var(--danger-400)"
+        dark: "var(--danger-700)"
     danger:
       description: "A danger (default) text color used for the design system."
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--danger-900)"
+        dark: "var(--danger-100)"
     danger-hover:
       description: "A hover danger text color used for the design system."
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--danger-800)"
+        dark: "var(--danger-200)"
     danger-active:
       description: "An active danger text color used for the design system."
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--danger-700)"
+        dark: "var(--danger-300)"
   disabled-opacity:
     description: "The opacity of disabled elements."
     values:
