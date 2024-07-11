@@ -1,21 +1,496 @@
 @import '@motionwindui/base/css/styles.css';
 
+/* Neutral Solid */
 .btn--neutral-solid {
-    @apply bg-[var(--button-neutral-solid-background)] text-[--button-neutral-solid-text]
+    @apply bg-[--button-neutral-solid-background] text-[--button-neutral-solid-text]
 }
 
 .btn--neutral-solid:hover {
-    @apply bg-[var(--button-neutral-solid-hover-background)] text-[var(--button-neutral-solid-hover-text)]
+    @apply bg-[--button-neutral-solid-hover-background] text-[--button-neutral-solid-hover-text]
 }
 
-.btn--text-test-sm {
-    font-size: 1rem;
+.btn--neutral-solid:active {
+    @apply bg-[--button-neutral-solid-active-background] text-[--button-neutral-solid-active-text]
 }
 
-.btn--text-test-md {
-    font-size: 1.25rem;
+.btn--neutral-solid:disabled {
+    @apply bg-[--button-neutral-solid-background] text-[--button-neutral-solid-text]
 }
 
-.btn--text-test-lg {
-    font-size: 1.5rem;
+/* Neutral bordered */
+.btn--neutral-bordered {
+    @apply border-[--button-neutral-bordered-border] text-[--button-neutral-bordered-text] border-[length:--button-size-border]
 }
+
+.btn--neutral-bordered:hover {
+    @apply border-[--button-neutral-bordered-hover-border] text-[--button-neutral-bordered-hover-text]
+}
+
+.btn--neutral-bordered:active {
+    @apply border-[--button-neutral-bordered-active-border] text-[--button-neutral-bordered-active-text]
+}
+
+.btn--neutral-bordered:disabled {
+    @apply border-[--button-neutral-bordered-border] text-[--button-neutral-bordered-text]
+}
+
+/* Neutral Faded */
+.btn--neutral-faded {
+    @apply text-[--button-neutral-faded-text]
+}
+
+.btn--neutral-faded:hover {
+    @apply bg-[--button-neutral-faded-hover-background] text-[--button-neutral-faded-hover-text]
+}
+
+.btn--neutral-faded:active {
+    @apply bg-[--button-neutral-faded-active-background] text-[--button-neutral-faded-active-text]
+}
+
+.btn--neutral-faded:disabled {
+    @apply text-[--button-neutral-faded-text]
+}
+
+/* Neutral Ghost */
+.btn--neutral-ghost {
+    @apply border-[--button-neutral-ghost-border] text-[--button-neutral-ghost-text]
+}
+
+.btn--neutral-ghost:hover {
+    @apply bg-[--button-neutral-ghost-hover-background] text-[--button-neutral-ghost-hover-text]
+}
+
+.btn--neutral-ghost:active {
+    @apply bg-[--button-neutral-ghost-active-background] text-[--button-neutral-ghost-active-text]
+}
+
+.btn--neutral-ghost:disabled {
+    @apply border-[--button-neutral-ghost-border] text-[--button-neutral-ghost-text]
+
+}
+
+/* Primary Solid */
+.btn--primary-solid {
+    @apply bg-[--button-primary-solid-background] text-[--button-primary-solid-text]
+}
+
+.btn--primary-solid:hover {
+    @apply bg-[--button-primary-solid-hover-background] text-[--button-primary-solid-hover-text]
+}
+
+.btn--primary-solid:active {
+    @apply bg-[--button-primary-solid-active-background] text-[--button-primary-solid-active-text]
+}
+
+.btn--primary-solid:disabled {
+    @apply bg-[--button-primary-solid-background] text-[--button-primary-solid-text]
+}
+
+/* Primary bordered */
+.btn--primary-bordered {
+    @apply border-[--button-primary-bordered-border] text-[--button-primary-bordered-text] border-[length:--button-size-border]
+}
+
+.btn--primary-bordered:hover {
+    @apply border-[--button-primary-bordered-hover-border] text-[--button-primary-bordered-hover-text]
+}
+
+.btn--primary-bordered:active {
+    @apply border-[--button-primary-bordered-active-border] text-[--button-primary-bordered-active-text]
+}
+
+.btn--primary-bordered:disabled {
+    @apply border-[--button-primary-bordered-border] text-[--button-primary-bordered-text]
+}
+
+/* Primary Faded */
+.btn--primary-faded {
+    @apply text-[--button-primary-faded-text]
+}
+
+.btn--primary-faded:hover {
+    @apply bg-[--button-primary-faded-hover-background] text-[--button-primary-faded-hover-text]
+}
+
+.btn--primary-faded:active {
+    @apply bg-[--button-primary-faded-active-background] text-[--button-primary-faded-active-text]
+}
+
+.btn--primary-faded:disabled {
+    @apply text-[--button-primary-faded-text]
+}
+
+/* Primary Ghost */
+.btn--primary-ghost {
+    @apply border-[--button-primary-ghost-border] text-[--button-primary-ghost-text]
+}
+
+.btn--primary-ghost:hover {
+    @apply bg-[--button-primary-ghost-hover-background] text-[--button-primary-ghost-hover-text]
+}
+
+.btn--primary-ghost:active {
+    @apply bg-[--button-primary-ghost-active-background] text-[--button-primary-ghost-active-text]
+}
+
+.btn--primary-ghost:disabled {
+    @apply border-[--button-primary-ghost-border] text-[--button-primary-ghost-text]
+}
+
+/* Secondary Solid */
+.btn--secondary-solid {
+    @apply bg-[--button-secondary-solid-background] text-[--button-secondary-solid-text]
+}
+
+.btn--secondary-solid:hover {
+    @apply bg-[--button-secondary-solid-hover-background] text-[--button-secondary-solid-hover-text]
+}
+
+.btn--secondary-solid:active {
+    @apply bg-[--button-secondary-solid-active-background] text-[--button-secondary-solid-active-text]
+}
+
+.btn--secondary-solid:disabled {
+    @apply bg-[--button-secondary-solid-background] text-[--button-secondary-solid-text]
+}
+
+/* Secondary bordered */
+.btn--secondary-bordered {
+    @apply border-[--button-secondary-bordered-border] text-[--button-secondary-bordered-text] border-[length:--button-size-border]
+}
+
+.btn--secondary-bordered:hover {
+    @apply border-[--button-secondary-bordered-hover-border] text-[--button-secondary-bordered-hover-text]
+}
+
+.btn--secondary-bordered:active {
+    @apply border-[--button-secondary-bordered-active-border] text-[--button-secondary-bordered-active-text]
+}
+
+.btn--secondary-bordered:disabled {
+    @apply border-[--button-secondary-bordered-border] text-[--button-secondary-bordered-text]
+}
+
+/* Secondary Faded */
+.btn--secondary-faded {
+    @apply text-[--button-secondary-faded-text]
+}
+
+.btn--secondary-faded:hover {
+    @apply bg-[--button-secondary-faded-hover-background] text-[--button-secondary-faded-hover-text]
+}
+
+.btn--secondary-faded:active {
+    @apply bg-[--button-secondary-faded-active-background] text-[--button-secondary-faded-active-text]
+}
+
+.btn--secondary-faded:disabled {
+    @apply text-[--button-secondary-faded-text]
+}
+
+/* Secondary Ghost */
+.btn--secondary-ghost {
+    @apply border-[--button-secondary-ghost-border] text-[--button-secondary-ghost-text]
+}
+
+.btn--secondary-ghost:hover {
+    @apply bg-[--button-secondary-ghost-hover-background] text-[--button-secondary-ghost-hover-text]
+}
+
+.btn--secondary-ghost:active {
+    @apply bg-[--button-secondary-ghost-active-background] text-[--button-secondary-ghost-active-text]
+}
+
+.btn--secondary-ghost:disabled {
+    @apply border-[--button-secondary-ghost-border] text-[--button-secondary-ghost-text]
+}
+
+/* Success Solid */
+.btn--success-solid {
+    @apply bg-[--button-success-solid-background] text-[--button-success-solid-text]
+}
+
+.btn--success-solid:hover {
+    @apply bg-[--button-success-solid-hover-background] text-[--button-success-solid-hover-text]
+}
+
+.btn--success-solid:active {
+    @apply bg-[--button-success-solid-active-background] text-[--button-success-solid-active-text]
+}
+
+.btn--success-solid:disabled {
+    @apply bg-[--button-success-solid-background] text-[--button-success-solid-text]
+}
+
+/* Success bordered */
+.btn--success-bordered {
+    @apply border-[--button-success-bordered-border] text-[--button-success-bordered-text] border-[length:--button-size-border]
+}
+
+.btn--success-bordered:hover {
+    @apply border-[--button-success-bordered-hover-border] text-[--button-success-bordered-hover-text]
+}
+
+.btn--success-bordered:active {
+    @apply border-[--button-success-bordered-active-border] text-[--button-success-bordered-active-text]
+}
+
+.btn--success-bordered:disabled {
+    @apply border-[--button-success-bordered-border] text-[--button-success-bordered-text]
+}
+
+/* Success Faded */
+.btn--success-faded {
+    @apply text-[--button-success-faded-text]
+}
+
+.btn--success-faded:hover {
+    @apply bg-[--button-success-faded-hover-background] text-[--button-success-faded-hover-text]
+}
+
+.btn--success-faded:active {
+    @apply bg-[--button-success-faded-active-background] text-[--button-success-faded-active-text]
+}
+
+.btn--success-faded:disabled {
+    @apply text-[--button-success-faded-text]
+}
+
+/* Success Ghost */
+.btn--success-ghost {
+    @apply border-[--button-success-ghost-border] text-[--button-success-ghost-text]
+}
+
+.btn--success-ghost:hover {
+    @apply bg-[--button-success-ghost-hover-background] text-[--button-success-ghost-hover-text]
+}
+
+.btn--success-ghost:active {
+    @apply bg-[--button-success-ghost-active-background] text-[--button-success-ghost-active-text]
+}
+
+.btn--success-ghost:disabled {
+    @apply border-[--button-success-ghost-border] text-[--button-success-ghost-text]
+}
+
+/* Warning Solid */
+.btn--warning-solid {
+    @apply bg-[--button-warning-solid-background] text-[--button-warning-solid-text]
+}
+
+.btn--warning-solid:hover {
+    @apply bg-[--button-warning-solid-hover-background] text-[--button-warning-solid-hover-text]
+}
+
+.btn--warning-solid:active {
+    @apply bg-[--button-warning-solid-active-background] text-[--button-warning-solid-active-text]
+}
+
+.btn--warning-solid:disabled {
+    @apply bg-[--button-warning-solid-background] text-[--button-warning-solid-text]
+}
+
+/* Warning bordered */
+.btn--warning-bordered {
+    @apply border-[--button-warning-bordered-border] text-[--button-warning-bordered-text] border-[length:--button-size-border]
+}
+
+.btn--warning-bordered:hover {
+    @apply border-[--button-warning-bordered-hover-border] text-[--button-warning-bordered-hover-text]
+}
+
+.btn--warning-bordered:active {
+    @apply border-[--button-warning-bordered-active-border] text-[--button-warning-bordered-active-text]
+}
+
+.btn--warning-bordered:disabled {
+    @apply border-[--button-warning-bordered-border] text-[--button-warning-bordered-text]
+}
+
+/* Warning Faded */
+.btn--warning-faded {
+    @apply text-[--button-warning-faded-text]
+}
+
+.btn--warning-faded:hover {
+    @apply bg-[--button-warning-faded-hover-background] text-[--button-warning-faded-hover-text]
+}
+
+.btn--warning-faded:active {
+    @apply bg-[--button-warning-faded-active-background] text-[--button-warning-faded-active-text]
+}
+
+.btn--warning-faded:disabled {
+    @apply text-[--button-warning-faded-text]
+}
+
+/* Warning Ghost */
+.btn--warning-ghost {
+    @apply border-[--button-warning-ghost-border] text-[--button-warning-ghost-text]
+}
+
+.btn--warning-ghost:hover {
+    @apply bg-[--button-warning-ghost-hover-background] text-[--button-warning-ghost-hover-text]
+}
+
+.btn--warning-ghost:active {
+    @apply bg-[--button-warning-ghost-active-background] text-[--button-warning-ghost-active-text]
+}
+
+.btn--warning-ghost:disabled {
+    @apply border-[--button-warning-ghost-border] text-[--button-warning-ghost-text]
+}
+
+/* Danger Solid */
+.btn--danger-solid {
+    @apply bg-[--button-danger-solid-background] text-[--button-danger-solid-text]
+}
+
+.btn--danger-solid:hover {
+    @apply bg-[--button-danger-solid-hover-background] text-[--button-danger-solid-hover-text]
+}
+
+.btn--danger-solid:active {
+    @apply bg-[--button-danger-solid-active-background] text-[--button-danger-solid-active-text]
+}
+
+.btn--danger-solid:disabled {
+    @apply bg-[--button-danger-solid-background] text-[--button-danger-solid-text]
+}
+
+/* Danger bordered */
+.btn--danger-bordered {
+    @apply border-[--button-danger-bordered-border] text-[--button-danger-bordered-text] border-[length:--button-size-border]
+}
+
+.btn--danger-bordered:hover {
+    @apply border-[--button-danger-bordered-hover-border] text-[--button-danger-bordered-hover-text]
+}
+
+.btn--danger-bordered:active {
+    @apply border-[--button-danger-bordered-active-border] text-[--button-danger-bordered-active-text]
+}
+
+.btn--danger-bordered:disabled {
+    @apply border-[--button-danger-bordered-border] text-[--button-danger-bordered-text]
+}
+
+/* Danger Faded */
+.btn--danger-faded {
+    @apply text-[--button-danger-faded-text]
+}
+
+.btn--danger-faded:hover {
+    @apply bg-[--button-danger-faded-hover-background] text-[--button-danger-faded-hover-text]
+}
+
+.btn--danger-faded:active {
+    @apply bg-[--button-danger-faded-active-background] text-[--button-danger-faded-active-text]
+}
+
+.btn--danger-faded:disabled {
+    @apply text-[--button-danger-faded-text]
+}
+
+/* Danger Ghost */
+.btn--danger-ghost {
+    @apply border-[--button-danger-ghost-border] text-[--button-danger-ghost-text]
+}
+
+.btn--danger-ghost:hover {
+    @apply bg-[--button-danger-ghost-hover-background] text-[--button-danger-ghost-hover-text]
+}
+
+.btn--danger-ghost:active {
+    @apply bg-[--button-danger-ghost-active-background] text-[--button-danger-ghost-active-text]
+}
+
+.btn--danger-ghost:disabled {
+    @apply border-[--button-danger-ghost-border] text-[--button-danger-ghost-text]
+}
+
+/* Neutral Icon Solid */
+.btn--neutral-icon-solid {
+    @apply text-[--button-neutral-solid-text]
+}
+
+.btn--neutral-icon-solid:hover {
+    @apply text-[--button-neutral-solid-hover-text]
+}
+
+.btn--neutral-icon-solid:focus {
+    @apply text-[--button-neutral-solid-text]
+}
+
+.btn--neutral-icon-solid:active {
+    @apply text-[--button-neutral-solid-active-text]
+}
+
+.btn--neutral-icon-solid:disabled {
+    @apply text-[--button-neutral-solid-text]
+}
+
+/* Neutral Icon bordered */
+.btn--neutral-icon-bordered {
+    @apply text-[--button-neutral-bordered-text]
+}
+
+.btn--neutral-icon-bordered:hover {
+    @apply text-[--button-neutral-bordered-hover-text]
+}
+
+.btn--neutral-icon-bordered:focus {
+    @apply text-[--button-neutral-bordered-text]
+}
+
+.btn--neutral-icon-bordered:active {
+    @apply text-[--button-neutral-bordered-active-text]
+}
+
+.btn--neutral-icon-bordered:disabled {
+    @apply text-[--button-neutral-bordered-text]
+}
+
+/* Neutral Icon Faded */
+.btn--neutral-icon-faded {
+    @apply text-[--button-neutral-faded-text]
+}
+
+.btn--neutral-icon-faded:hover {
+    @apply text-[--button-neutral-faded-hover-text]
+}
+
+.btn--neutral-icon-faded:focus {
+    @apply text-[--button-neutral-faded-text]
+}
+
+.btn--neutral-icon-faded:active {
+    @apply text-[--button-neutral-faded-active-text]
+}
+
+.btn--neutral-icon-faded:disabled {
+    @apply text-[--button-neutral-faded-text]
+}
+
+/* Neutral Icon Ghost */
+.btn--neutral-icon-ghost {
+    @apply text-[--button-neutral-ghost-text]
+}
+
+.btn--neutral-icon-ghost:hover {
+    @apply text-[--button-neutral-ghost-hover-text]
+}
+
+.btn--neutral-icon-ghost:focus {
+    @apply text-[--button-neutral-ghost-text]
+}
+
+.btn--neutral-icon-ghost:active {
+    @apply text-[--button-neutral-ghost-active-text]
+}
+
+.btn--neutral-icon-ghost:disabled {
+    @apply text-[--button-neutral-ghost-text]
+}
+
+/* Primary Icon Solid */

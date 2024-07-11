@@ -310,14 +310,14 @@
 	--text-neutral: var(--neutral-900);
 	--text-neutral-hover: var(--neutral-800);
 	--text-neutral-active: var(--neutral-700);
-	--text-on-primary: var(--neutral-900);
-	--text-on-primary-hover: var(--neutral-800);
-	--text-on-primary-active: var(--neutral-700);
-	--text-on-primary-disabled: var(--neutral-900);
-	--text-on-primary-subtle-subtle: var(--neutral-400);
-	--text-primary: var(--neutral-900);
-	--text-primary-hover: var(--neutral-800);
-	--text-primary-active: var(--neutral-700);
+	--text-on-primary: var(--primary-50);
+	--text-on-primary-hover: var(--primary-100);
+	--text-on-primary-active: var(--primary-200);
+	--text-on-primary-disabled: var(--primary-900);
+	--text-on-primary-subtle-subtle: var(--primary-400);
+	--text-primary: var(--primary-700);
+	--text-primary-hover: var(--primary-800);
+	--text-primary-active: var(--primary-700);
 	--text-on-secondary: var(--neutral-900);
 	--text-on-secondary-hover: var(--neutral-800);
 	--text-on-secondary-active: var(--neutral-700);
@@ -350,6 +350,10 @@
 	--text-danger: var(--neutral-900);
 	--text-danger-hover: var(--neutral-800);
 	--text-danger-active: var(--neutral-700);
+	--disabled-opacity: 0.6;
+	--focus-outline-width: 2px;
+	--focus-outline-offset: 2px;
+	--focus-outline-color: var(--primary-500);
 	--button-neutral-solid-background: var(--accent-neutral);
 	--button-neutral-solid-text: var(--text-on-neutral);
 	--button-neutral-solid-hover-background: var(--accent-neutral-hover);
@@ -382,11 +386,11 @@
 	--button-neutral-ghost-focus-outline: var(--focus-outline);
 	--button-neutral-ghost-disabled-opacity: var(--opacity-disabled);
 	--button-primary-solid-background: var(--accent-primary);
-	--button-primary-solid-text: var(--text-primary);
+	--button-primary-solid-text: var(--text-on-primary);
 	--button-primary-solid-hover-background: var(--accent-primary-hover);
-	--button-primary-solid-hover-text: var(--text-primary-hover);
+	--button-primary-solid-hover-text: var(--text-on-primary-hover);
 	--button-primary-solid-active-background: var(--accent-primary-active);
-	--button-primary-solid-active-text: var(--text-primary-active);
+	--button-primary-solid-active-text: var(--text-on-primary-active);
 	--button-primary-solid-focus-outline: var(--focus-outline);
 	--button-primary-solid-disabled-opacity: var(--opacity-disabled);
 	--button-primary-faded-text: var(--text-primary);
@@ -669,14 +673,14 @@
 	--text-neutral: var(--neutral-100);
 	--text-neutral-hover: var(--neutral-200);
 	--text-neutral-active: var(--neutral-300);
-	--text-on-primary: var(--neutral-100);
-	--text-on-primary-hover: var(--neutral-200);
-	--text-on-primary-active: var(--neutral-300);
-	--text-on-primary-disabled: var(--neutral-100);
-	--text-on-primary-subtle-subtle: var(--neutral-700);
-	--text-primary: var(--neutral-100);
-	--text-primary-hover: var(--neutral-200);
-	--text-primary-active: var(--neutral-300);
+	--text-on-primary: var(--primary-900);
+	--text-on-primary-hover: var(--primary-950);
+	--text-on-primary-active: var(--primary-950);
+	--text-on-primary-disabled: var(--primary-50);
+	--text-on-primary-subtle-subtle: var(--primary-700);
+	--text-primary: var(--primary-700);
+	--text-primary-hover: var(--primary-600);
+	--text-primary-active: var(--primary-400);
 	--text-on-secondary: var(--neutral-100);
 	--text-on-secondary-hover: var(--neutral-200);
 	--text-on-secondary-active: var(--neutral-300);
@@ -709,6 +713,10 @@
 	--text-danger: var(--neutral-100);
 	--text-danger-hover: var(--neutral-200);
 	--text-danger-active: var(--neutral-300);
+	--disabled-opacity: 0.6;
+	--focus-outline-width: 2px;
+	--focus-outline-offset: 2px;
+	--focus-outline-color: var(--primary-500);
 }
 }
 }

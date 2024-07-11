@@ -33,10 +33,10 @@ export interface ButtonProps
   variant?: 'solid' | 'faded' | 'bordered' | 'ghost';
 
   /** The size of the button */
-  size?: 'sm' | 'md' | 'lg' | 'default';
+  size?: 'sm' | 'md' | 'lg';
 
   /** The radius of the button */
-  radius?: 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'default';
+  radius?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
   /** The icon to be displayed before the text */
   leadingIcon?: ReactElement | IconOutline | IconSolid | IconSpinners;
@@ -68,10 +68,10 @@ export interface ButtonProps
 
 function Button({
   className,
-  color = 'primary',
+  color = 'neutral',
   variant = 'solid',
-  size = 'default',
-  radius = 'default',
+  size = 'md',
+  radius = 'md',
   leadingIcon,
   trailingIcon,
   animate = true,
@@ -120,7 +120,7 @@ function Button({
     <motion.button
       className={clsxMerge(
         buttonStyles({
-          buttonType: 'neutral-solid',
+          buttonType: `${color}-${variant}`,
           size,
           radius,
           className,
@@ -136,7 +136,7 @@ function Button({
     <button
       className={clsxMerge(
         buttonStyles({
-          buttonType: 'neutral-solid',
+          buttonType: `${color}-${variant}`,
           size,
           radius,
           className,
@@ -145,29 +145,7 @@ function Button({
       disabled={disabledState}
       {...props}
     >
-      {leadingIcon && (
-        <IconWrapper
-          icon={leadingIcon}
-          className={clsxMerge(
-            iconStyles({
-              buttonType: 'neutral-solid',
-              size,
-            }),
-          )}
-        />
-      )}
-      {showChildren && children}
-      {trailingIcon && (
-        <IconWrapper
-          icon={trailingIcon}
-          className={clsxMerge(
-            iconStyles({
-              buttonType: 'neutral-solid',
-              size,
-            }),
-          )}
-        />
-      )}
+      {buttonContent}
     </button>
   );
 }

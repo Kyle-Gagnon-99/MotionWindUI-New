@@ -124,21 +124,21 @@ components:
           values: "var(--accent-primary)"
         text:
           description: "The default text color of a primary button."
-          values: "var(--text-primary)"
+          values: "var(--text-on-primary)"
         hover:
           background:
             description: "The hover background color of a primary button."
             values: "var(--accent-primary-hover)"
           text:
             description: "The hover text color of a primary button."
-            values: "var(--text-primary-hover)"
+            values: "var(--text-on-primary-hover)"
         active:
           background:
             description: "The active background color of a primary button."
             values: "var(--accent-primary-active)"
           text:
             description: "The active text color of a primary button."
-            values: "var(--text-primary-active)"
+            values: "var(--text-on-primary-active)"
         focus:
           outline:
             description: "The focus outline color of a primary button."

@@ -717,43 +717,43 @@ style-tokens:
     on-primary:
       description: "A text color on a primary background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--primary-50)"
+        dark: "var(--primary-900)"
     on-primary-hover:
       description: "A text color on a hover primary background"
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--primary-100)"
+        dark: "var(--primary-950)"
     on-primary-active:
       description: "A text color on an active primary background"
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--primary-200)"
+        dark: "var(--primary-950)"
     on-primary-disabled:
       description: "A text color on a disabled primary background"
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--primary-900)"
+        dark: "var(--primary-50)"
     on-primary-subtle-subtle:
       description: "A subtle text color on a subtle primary background"
       values:
-        light: "var(--neutral-400)"
-        dark: "var(--neutral-700)"
+        light: "var(--primary-400)"
+        dark: "var(--primary-700)"
     primary:
       description: "A primary (default) text color used for the design system."
       values:
-        light: "var(--neutral-900)"
-        dark: "var(--neutral-100)"
+        light: "var(--primary-700)"
+        dark: "var(--primary-700)"
     primary-hover:
       description: "A hover primary text color used for the design system."
       values:
-        light: "var(--neutral-800)"
-        dark: "var(--neutral-200)"
+        light: "var(--primary-800)"
+        dark: "var(--primary-600)"
     primary-active:
       description: "An active primary text color used for the design system."
       values:
-        light: "var(--neutral-700)"
-        dark: "var(--neutral-300)"
+        light: "var(--primary-700)"
+        dark: "var(--primary-400)"
 
     # On Secondary / Secondary Text
     on-secondary:
@@ -922,3 +922,23 @@ style-tokens:
       values:
         light: "var(--neutral-700)"
         dark: "var(--neutral-300)"
+  disabled-opacity:
+    description: "The opacity of disabled elements."
+    values:
+      light: 0.6
+      dark: 0.6
+  focus-outline-width:
+    description: "The width of the focus outline."
+    values:
+      light: 2px
+      dark: 2px
+  focus-outline-offset:
+    description: "The offset of the focus outline."
+    values:
+      light: 2px
+      dark: 2px
+  focus-outline-color:
+    description: "The color of the focus outline."
+    values:
+      light: "var(--primary-500)"
+      dark: "var(--primary-500)"
