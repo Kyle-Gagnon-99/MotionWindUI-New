@@ -2,7 +2,7 @@ import { cva } from 'class-variance-authority';
 import './Button.css';
 
 export const buttonStyles = cva(
-  'flex flex-row disabled:cursor-not-allowed items-center justify-center',
+  'flex flex-row disabled:cursor-not-allowed items-center justify-center gap-2',
   {
     variants: {
       buttonType: {

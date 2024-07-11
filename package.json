@@ -1,41 +1,43 @@
 {
-  "name": "motionwindui",
-  "version": "1.0.0",
-  "description": "An NPM workspace for the MotionWIndUI component library",
-  "private": true,
-  "workspaces": [
-    "packages/config",
-    "packages/base",
-    "packages/utils",
-    "packages/generate-css",
-    "packages/button",
-    "docs"
-  ],
-  "keywords": [],
-  "author": {
-    "name": "Kyle Gagnon"
-  },
-  "license": "ISC",
-  "scripts": {
-    "lint": "npx lerna run lint",
-    "prepare": "husky",
-    "build-storybook": "cd docs && npm run build-storybook",
-    "chromatic": "npx chromatic --project-token=chpt_4f7647806dc5648"
-  },
-  "devDependencies": {
-    "@types/node": "^20.14.10",
-    "@typescript-eslint/eslint-plugin": "^7.16.0",
-    "@typescript-eslint/parser": "^7.16.0",
-    "autoprefixer": "^10.4.19",
-    "chromatic": "^11.5.4",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "husky": "^9.0.11",
-    "lerna": "^8.1.5",
-    "lint-staged": "^15.2.7",
-    "postcss": "^8.4.39",
-    "prettier": "^3.3.2",
-    "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.3"
-  }
+	"name": "motionwindui",
+	"version": "1.0.0",
+	"description": "An NPM workspace for the MotionWIndUI component library",
+	"private": true,
+	"workspaces": [
+		"packages/config",
+		"packages/base",
+		"packages/utils",
+		"packages/generate-css",
+		"packages/button",
+		"docs"
+	],
+	"keywords": [],
+	"author": {
+		"name": "Kyle Gagnon"
+	},
+	"license": "ISC",
+	"scripts": {
+		"lint": "npx lerna run lint",
+		"prepare": "husky",
+		"build-storybook": "cd docs && npm run build-storybook",
+		"chromatic": "npx chromatic --project-token=chpt_4f7647806dc5648",
+		"storybook": "concurrently \"cd docs && npm run storybook\" \"cd packages/config && npm run build:css\""
+	},
+	"devDependencies": {
+		"@types/node": "^20.14.10",
+		"@typescript-eslint/eslint-plugin": "^7.16.0",
+		"@typescript-eslint/parser": "^7.16.0",
+		"autoprefixer": "^10.4.19",
+		"chromatic": "^11.5.4",
+		"concurrently": "^8.2.2",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"husky": "^9.0.11",
+		"lerna": "^8.1.5",
+		"lint-staged": "^15.2.7",
+		"postcss": "^8.4.39",
+		"prettier": "^3.3.2",
+		"tailwindcss": "^3.4.4",
+		"typescript": "^5.5.3"
+	}
 }
